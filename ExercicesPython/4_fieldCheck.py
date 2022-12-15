@@ -1,7 +1,7 @@
 import os
 
 numLine=0
-fieldWellConstituted=False
+fieldWellConstituted=True
    
 def checkLine(arrLine) -> bool:
     boolToReturn    =False
@@ -32,7 +32,7 @@ listOfLines=open("./exemple.csv", 'r').readlines()
 for line in listOfLines: 
     arrLine=line.strip()
     arrLine=arrLine.split(";")
-    fieldWellConstituted=checkLine(arrLine)
+    fieldWellConstituted=checkLine(arrLine) and fieldWellConstituted
 
 
 strfieldWellConstituted= "les Champs ne sont pas bien contitués!" if not fieldWellConstituted else "Les Champs sont bien constitués!"
